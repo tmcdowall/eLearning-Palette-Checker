@@ -1,5 +1,17 @@
 import html2pdf from 'html2pdf.js';
 
+export const hexToRgb = (hex) => {
+  try {
+    const [r, g, b] = hex
+      .replace('#', '')
+      .match(/.{1,2}/g)
+      .map((c) => parseInt(c, 16));
+    return `${r}, ${g}, ${b}`;
+  } catch {
+    return '0, 0, 0';
+  }
+};
+
 function ExportOptions({ colours }) {
   const exportPDF = () => {
     const element = document.getElementById('print-target');
@@ -69,18 +81,6 @@ function ExportOptions({ colours }) {
     link.href = URL.createObjectURL(blob);
     link.download = 'eLearnTint_palette.json';
     link.click();
-  };
-
-  const hexToRgb = (hex) => {
-    try {
-      const [r, g, b] = hex
-        .replace('#', '')
-        .match(/.{1,2}/g)
-        .map((c) => parseInt(c, 16));
-      return `${r}, ${g}, ${b}`;
-    } catch {
-      return '0, 0, 0';
-    }
   };
 
   return (
