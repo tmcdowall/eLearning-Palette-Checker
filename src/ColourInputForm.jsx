@@ -4,6 +4,13 @@ import ContrastChecker from './ContrastChecker';
 import StyleGuidePreview from './StyleGuidePreview';
 import ExportOptions from './ExportOptions';
 
+/**
+ * React component for creating and customizing a color palette with accessibility and color blindness simulation features.
+ *
+ * Allows users to define a set of labeled colors, select a default background color, and preview accessibility contrast. Supports adding, removing, and editing up to six custom colors, simulating various types of color blindness, and exporting the palette. Provides suggested accessible green and red colors based on the selected background.
+ *
+ * @returns {JSX.Element} The rendered color input form and preview interface.
+ */
 function ColourInputForm() {
   const [backgroundColour, setBackgroundColour] = useState('#FFFFFF');
   const [userColours, setUserColours] = useState([
