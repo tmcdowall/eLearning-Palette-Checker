@@ -1,6 +1,19 @@
 import chroma from 'chroma-js';
 import colorBlind from 'color-blind';
 
+/**
+ * Renders a comprehensive style guide preview for a given color palette, including accessibility contrast matrices, color swatches, button styles, and feedback indicators.
+ *
+ * The preview includes simulations for various types of color blindness, displays recommended text colors for accessibility, and evaluates color pairings against WCAG 2.2 contrast standards for both small and large text.
+ *
+ * @param {Object} props.colours - Mapping of color names to color data (hex and optional label).
+ * @param {Object} props.suggestedGreen - Color object for "correct" feedback.
+ * @param {Object} props.suggestedRed - Color object for "incorrect" feedback.
+ * @param {string} props.backgroundColour - Hex string for the background color.
+ * @param {string[]} [props.simulationModes] - Array of color blindness simulation mode names.
+ *
+ * @returns {JSX.Element} A React component displaying the style guide preview with accessibility and color blindness simulations.
+ */
 function StyleGuidePreview({
   colours,
   suggestedGreen,
