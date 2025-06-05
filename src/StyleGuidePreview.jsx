@@ -8,7 +8,6 @@ function StyleGuidePreview({
   backgroundColour,
   simulationModes = [],
 }) {
-  const getContrast = (fg, bg) => chroma.contrast(fg, bg).toFixed(2);
   const getRGB = (hex) => chroma(hex).rgb().join(', ');
 
   const colourEntries = Object.entries(colours);

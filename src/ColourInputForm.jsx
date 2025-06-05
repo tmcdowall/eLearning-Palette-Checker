@@ -87,11 +87,12 @@ function ColourInputForm() {
         <h2>Define Your Palette</h2>
 
         <div style={{ marginBottom: '2rem' }}>
-          <label>
+          <label htmlFor="backgroundColour">
             <strong>Default Background Colour</strong>
           </label>
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
             <input
+              id="backgroundColour"
               type="color"
               value={backgroundColour}
               onChange={(e) => setBackgroundColour(e.target.value)}
